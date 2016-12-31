@@ -1,0 +1,54 @@
+##  ------------------------------------------------------------------------  ##
+##                    ONLY DEVS CAN EDIT IN THIS FILE                         ##
+##  ------------------------------------------------------------------------  ##
+
+# APP_ENV=production
+APP_ENV=${NODE_ENV}
+APP_DEBUG=$("dev" eq "${APP_ENV}" || "development" eq "${APP_ENV}")
+
+APP_KEY=
+APP_URL=http://${APP_DOMAIN}
+APP_HOME="/var/dockerman"
+APP_DIR="${APP_NAME}"
+
+APP_MODULE_NAME="app"
+
+D="$(date +"%Y%m%d")"
+DT="$(date +"%Y%m%d%H%M%S")"
+D_T="$(date "+%Y-%m-%d")_$(date "+%H-%M-%S")"
+
+// ADB_ENGINE="${DB_ENGINE}"
+// ADB_HOST=localhost
+// ADB_PORT=3306
+// ADB_NAME="${APP_NAME}_${APP_ENV}"
+// ADB_USERNAME=${APP_NAME}_${ADB_ENGINE}_${APP_ENV}_user
+// ADB_PASSWORD=ysmsJ0kT7MCaRw2DFYnMJ8Ls
+// ADB_DOCKER_LIB="tbaltrushaitis"
+// ADB_DOCKER_REPO="mysql-percona"
+// ADB_DOCKER_IMAGE="https://hub.docker.com/r/${ADB_DOCKER_LIB}/${ADB_DOCKER_REPO}:${DB_ENGINE_TAG}" \
+
+APP_ENGINE_NAME="${APP_ENGINE}"
+APP_ENGINE_TAG="${APP_ENGINE_TAG}"
+APP_ENGINE_LIB="${APP_ENGINE}"
+APP_ENGINE_REPO="laravel"
+APP_ENGINE_BRANCH="${APP_ENGINE_TAG}"
+// APP_ENGINE_DOCKER_LIB="tbaltrushaitis"
+APP_ENGINE_DOCKER_REPO="tbaltrushaitis/gsmc-public"
+APP_ENGINE_DOCKER_IMAGE="https://hub.docker.com/r/${APP_ENGINE_DOCKER_REPO}:${APP_ENGINE_TAG}"
+
+// BACK_PATH="${DIR_BACK}/${DB_NAME}/"
+
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+#REDIS_HOST=127.0.0.1
+#REDIS_PASSWORD=null
+#REDIS_PORT=6379
+
+#MAIL_DRIVER=smtp
+#MAIL_HOST=mailtrap.io
+#MAIL_PORT=2525
+#MAIL_USERNAME=null
+#MAIL_PASSWORD=null
+#MAIL_ENCRYPTION=null

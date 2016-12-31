@@ -27,8 +27,20 @@ DIR_ROOT="/var/www/html/${APP_NAME}"
 DIR_WEB="webroot"
 DIR_BACK="/opt/backup"
 
-PS_ADMIN_PASS="${FW_ADMIN_PW}"
-PS_ADMIN_MAIL="${FW_ADMIN_MAIL}"
+CACHE_DRIVER=file
+SESSION_DRIVER=file
+QUEUE_DRIVER=sync
+
+#REDIS_HOST=127.0.0.1
+#REDIS_PASSWORD=null
+#REDIS_PORT=6379
+
+#MAIL_DRIVER=smtp
+#MAIL_HOST=mailtrap.io
+#MAIL_PORT=2525
+#MAIL_USERNAME=null
+#MAIL_PASSWORD=null
+#MAIL_ENCRYPTION=null
 
 ##  -------------------------------------------------------------- ##
 ##  MYSQL DOCKER IMAGE SETTINGS
