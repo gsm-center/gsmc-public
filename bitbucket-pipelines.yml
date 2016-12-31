@@ -1,15 +1,37 @@
 # Only use spaces to indent .yml configuration.
 # -----
-# Specify a custom docker image from Docker Hub as build environment.
+# Custom docker image from Docker Hub as build environment.
 # image: docker-image:tag
+
+image: php:5.6-apache
 
 pipelines:
   default:
     - step:
         script:
+          - printf "This script runs on all branches that don't have any specific pipeline assigned in 'branches'.\n"
+          - source .;
+          - printf "APP_NAME = [${APP_NAME}]\n";
           - uname -a
           - free -m
           - df -H
           - lscpu
           - ls /home
-          - echo "Everything is awesome!"
+          - printf "Everything is awesome!\n"
+  branches:
+    master:
+      - step:
+          script:
+            - printf "This script runs only on commit to the MASTER branch."
+            - printf "MYSQL_TAG = [${MYSQL_TAG}]\n";
+            - printf "APP_NAME = [${APP_NAME}]\n";
+            - printf "[2] Everything is awesome!\n";
+    engine:
+      - step:
+          image: tbaltrushaitis/gsmc:latest
+          script:
+            - printf "This script runs only on commit to branch with <engine> label."
+    notify:
+      - step:
+          script:
+            - docker run hello-world
