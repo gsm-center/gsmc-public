@@ -1,8 +1,10 @@
-# GSMC #
+# GSMC - Global Solutions Management Center #
 
-[GSMC - Global Solutions Management Center](http://gsm-center.com.ua)
+![GSMC Logo](https://bitbucket.org/gsmcenter/public/avatar/128)
 
-### What is this repository for? ###
+`gsm-center`
+
+--------
 
 ## Web Engine based on [Laravel Framework](http://laravel.com)
 
@@ -15,11 +17,15 @@
 * Summary of set up
 * Configuration
 * Dependencies
-* Database configuration
+* Data storage configuration
 * How to run tests
 * Deployment instructions
+* Scaling instructions
 
 ### Maintainers ###
 
 * [Baltrushaitis Tomas](https://bitbucket.org/tbaltrushaitis)
 * I'm ready to get help in creation of tomorrow web ... its you just come as a contributor?
+
+### Production Site ###
+:star2: [Global Solutions Management Center](http://gsm-center.com.ua)
