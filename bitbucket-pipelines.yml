@@ -1,0 +1,10 @@
+# Only use spaces to indent .yml configuration.
+# -----
+# Specify a custom docker image from Docker Hub as build environment.
+# image: docker-image:tag
+
+pipelines:
+  default:
+    - step:
+        script:
+          - echo "Everything is awesome!"
