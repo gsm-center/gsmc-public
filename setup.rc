@@ -4,7 +4,7 @@
 
 # APP_ENV=production
 APP_ENV=${NODE_ENV}
-APP_DEBUG=$("dev" eq "${APP_ENV}" || "development" eq "${APP_ENV}")
+APP_DEBUG=$($("dev" eq "${APP_ENV}") || $("development" eq "${APP_ENV}"))
 
 APP_KEY=
 APP_URL=http://${APP_DOMAIN}
@@ -38,17 +38,3 @@ APP_ENGINE_DOCKER_IMAGE="https://hub.docker.com/r/${APP_ENGINE_DOCKER_REPO}:${AP
 
 // BACK_PATH="${DIR_BACK}/${DB_NAME}/"
 
-CACHE_DRIVER=file
-SESSION_DRIVER=file
-QUEUE_DRIVER=sync
-
-#REDIS_HOST=127.0.0.1
-#REDIS_PASSWORD=null
-#REDIS_PORT=6379
-
-#MAIL_DRIVER=smtp
-#MAIL_HOST=mailtrap.io
-#MAIL_PORT=2525
-#MAIL_USERNAME=null
-#MAIL_PASSWORD=null
-#MAIL_ENCRYPTION=null
