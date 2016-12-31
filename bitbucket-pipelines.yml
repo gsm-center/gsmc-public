@@ -7,4 +7,5 @@ pipelines:
   default:
     - step:
         script:
+          - uname -a
           - echo "Everything is awesome!"
