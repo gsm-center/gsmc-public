@@ -8,4 +8,8 @@ pipelines:
     - step:
         script:
           - uname -a
+          - free -m
+          - df -H
+          - lscpu
+          - ls /home
           - echo "Everything is awesome!"
