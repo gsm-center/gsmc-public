@@ -1,0 +1,29 @@
+### Files to ignore ###
+.gitconfig
+.gitattributes
+#.gitignore
+
+### Folders to ignore ###
+node_modules
+bower_modules
+
+### Docker files ###
+.dockercfg
+
+### Laravel ###
+laravel-*
+build
+webroot
+setup.sh
+lang/*
+.env(.?)*
+src/vendor/
+src/resources/lang/
+src/resources/assets/img/logo/Favicon.png
+src/resources/assets/img/logo/logo-lg.png
+src/resources/assets/img/social/
+src/resources/assets/js/plugins/misc/
+src/resources/views/vendor/
+animation/
+docs/
+*.original
