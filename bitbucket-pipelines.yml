@@ -10,7 +10,7 @@ pipelines:
     - step:
         script:
           - printf "This script runs on all branches that don't have any specific pipeline assigned in 'branches'.\n"
-          - source .;
+          - source .env.rc;
           - printf "APP_NAME = [${APP_NAME}]\n";
           - uname -a
           - free -m
@@ -23,7 +23,7 @@ pipelines:
       - step:
           script:
             - printf "This script runs only on commit to the MASTER branch."
-            - printf "MYSQL_TAG = [${MYSQL_TAG}]\n";
+            - printf "MYSQL_TAG = [${DB_ENGINE_TAG}]\n";
             - printf "APP_NAME = [${APP_NAME}]\n";
             - printf "[2] Everything is awesome!\n";
     engine:
