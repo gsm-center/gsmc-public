@@ -2,11 +2,12 @@
 
 ![GSMC Logo](https://bitbucket.org/gsmcenter/public/avatar/128)
 
-`gsm-center`
+`docker`, `services`, `manager`, `gsmc`, `gsm-center`
 
 --------
 
-## Web Engine based on [Laravel Framework](http://laravel.com)
+## What is GSMC-Public ##
+GSMC-Public is a web engine based on [Laravel](http://laravel.com) Framework
 
 * Laravel: 5.2
 * Version: 0.0.1
