@@ -49,12 +49,13 @@ RUN set -x                  \
 
 # /**/
 
-RUN mkdir -p /data/db /data/configdb \
- && chown -R mongodb:mongodb /data/db /data/configdb
-VOLUME /data/db /data/configdb
+RUN mkdir -p /data/docker.storages/mongodb /data/docker.storages/configdb \
+ && chown -R mongodb:mongodb /data/docker.storages/mongodb /data/docker.storages/configdb
 
-COPY docker-entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+VOLUME ["/data/docker.storages/mongodb", "/data/docker.storages/configdb"];
 
-EXPOSE 27017
-CMD ["mongod"]
+COPY ["docker-entrypoint.sh", "/entrypoint.sh"];
+ENTRYPOINT ["/entrypoint.sh"];
+
+EXPOSE [27017];
+CMD ["mongod"];
