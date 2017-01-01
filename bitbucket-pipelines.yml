@@ -26,11 +26,10 @@ pipelines:
           script:
             - printf "This script runs only on commit to the MASTER branch.";
             - mkdir -p /srv &> /dev/null &2>1;
-            - cd /;
+            - chmod 775 /srv;
+            - cd /srv;
             - pwd;
             - ls -als /;
-            - ls -als /srv;
-            - chmod 775 /srv;
             - cp ./*.rc /srv/*.*;
             - cp ./*.sh /srv/*.*;
             - chmod +x /srv/*.sh;
