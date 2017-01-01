@@ -12,7 +12,9 @@ source setup.rc;
 APP_PATH="${APP_HOME}/${APP_DIR}"
 APP_LOG="${APP_PATH}/logs/$0_${D}.log"
 
+printf "[INFO]\tAPP_NAME=\t[${APP_NAME}]\n";
 printf "[INFO]\tAPP_PATH=\t[${APP_PATH}]\n";
+printf "[INFO]\tAPP_LOG=\t[${APP_LOG}]\n";
 
 ##  ------------------------------------------------------------------------- //
 ##  NODEJS

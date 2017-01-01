@@ -26,11 +26,14 @@ pipelines:
           script:
             - printf "This script runs only on commit to the MASTER branch."
             - mkdir -p /srv >/dev/null &2>1
-            - cp ./setup.rc /srv/*.*;
-            - source /srv/setup.rc;
-            - printf "MYSQL_TAG = [${DB_ENGINE_TAG}]\n";
+            - chmod 775 /srv;
+            - cp ./*.rc /srv/*.*;
+            - cp ./*.sh /srv/*.*;
+            - chmod +x /srv/*.sh;
+            - . /srv/setup.sh;
             - printf "APP_NAME = [${APP_NAME}]\n";
-            - printf "[2] Everything is awesome!\n";
+            - printf "MYSQL_TAG = [${DB_ENGINE_TAG}]\n";
+            - printf "\n\n\n[INFO] Master branch onpush build finished!\n";
     engine:
       - step:
           image: tbaltrushaitis/gsmc:latest
