@@ -1,5 +1,7 @@
 FROM debian:jessie
 
+MAINTAINER Baltrushaitis Tomas <tbaltrushaitis@gmail.com>
+
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN ["groupadd", "-r", "mongodb", "&&", "useradd", "-r", "-g", "mongodb", "mongodb"]
 
@@ -49,15 +51,14 @@ RUN set -x                  \
 
 # /**/
 
-RUN [
-        "mkdir", "-p", "/storage/docker-assets/mongodb", "/storage/docker-assets/configdb"
+RUN [   "mkdir", "-p", "/storage/docker-assets/mongodb", "/storage/docker-assets/configdb"
       , "&&"
       , "chown", "-R", "mongodb:mongodb", "/storage/docker-assets/mongodb", "/storage/docker-assets/configdb"
     ];
 
 VOLUME ["/data/docker.storages/mongodb", "/data/docker.storages/configdb"];
 
-COPY ["docker-entrypoint.sh", "/entrypoint.sh"];
+// COPY ["docker-entrypoint.sh", "/entrypoint.sh"];
 ENTRYPOINT ["/entrypoint.sh"];
 
 EXPOSE [27017];
