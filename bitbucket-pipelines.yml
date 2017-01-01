@@ -27,11 +27,18 @@ pipelines:
             - free -m
             - df -H
             - printf "Processing operations ... \n";
+            - mkdir -p /data/mongodb &> /dev/null &2>1;
+            - mkdir -p /data/configdb &> /dev/null &2>1;
             - mkdir -p /srv &> /dev/null &2>1;
             - chmod 775 /srv;
             - cd /srv;
             - pwd;
-            - ls -als /;
+            - printf "/SRV:\n";
+            - ls -als;
+            - printf "/ETC/HOSTS:\n";
+            - ls -als /etc/hosts;
+            - printf "/HOME:\n";
+            - ls -als /home;
             # - cp ./*.rc /srv/*.*;
             # - cp ./*.sh /srv/*.*;
             # - chmod +x /srv/*.sh;
