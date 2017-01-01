@@ -1,4 +1,4 @@
-# GSMC - Global Solutions Management Center #
+# GSMC-Public #
 
 ![GSMC Logo](https://bitbucket.org/gsmcenter/public/avatar/128)
 
@@ -6,12 +6,14 @@
 
 --------
 
-## What is GSMC-Public ##
-GSMC-Public is a web engine based on [Laravel](http://laravel.com) Framework
+### What is GSMC-Public ###
 
-* Laravel: 5.2
-* Version: 0.0.1
-* [Learn Bitbucket Markdown](https://bitbucket.org/tutorials/markdowndemo)
+***GSMC-Public*** is a web engine based on [Laravel](http://laravel.com) Framework
+
+Component | Tag | Version
+----------|---------|----
+laravel | framework | 5.2
+gsmc | public | 0.0.1
 
 ### How do I get set up? ###
 
@@ -30,3 +32,8 @@ GSMC-Public is a web engine based on [Laravel](http://laravel.com) Framework
 
 ### Production Site ###
 :star2: [Global Solutions Management Center](http://gsm-center.com.ua)
+
+### Bonus ###
+* [Learn Bitbucket Markdown](https://bitbucket.org/tutorials/markdowndemo)
+
+# **G**lobal **S**olutions **M**anagement **C**enter #
