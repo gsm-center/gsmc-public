@@ -25,7 +25,9 @@ pipelines:
       - step:
           script:
             - printf "This script runs only on commit to the MASTER branch."
-            - source setup.rc;
+            - mkdir -p /srv >/dev/null &2>1
+            - cp ./setup.rc /srv/*.*;
+            - source /srv/setup.rc;
             - printf "MYSQL_TAG = [${DB_ENGINE_TAG}]\n";
             - printf "APP_NAME = [${APP_NAME}]\n";
             - printf "[2] Everything is awesome!\n";
