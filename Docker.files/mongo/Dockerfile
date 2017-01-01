@@ -65,7 +65,7 @@ RUN [   "mkdir", "-p", "/storage/docker-assets/mongodb", "/storage/docker-assets
 
 VOLUME ["/data/docker-assets/mongodb", "/data/docker-assets/configdb"];
 
-// COPY ["docker-entrypoint.sh", "/entrypoint.sh"];
+# COPY ["docker-entrypoint.sh", "/entrypoint.sh"];
 ENTRYPOINT ["/entrypoint.sh"];
 
 EXPOSE [27017];
