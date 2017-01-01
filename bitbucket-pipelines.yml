@@ -24,8 +24,11 @@ pipelines:
     master:
       - step:
           script:
-            - printf "This script runs only on commit to the MASTER branch."
-            - mkdir -p /srv >/dev/null &2>1
+            - printf "This script runs only on commit to the MASTER branch.";
+            - mkdir -p /srv &> /dev/null &2>1;
+            - cd /;
+            - pwd;
+            - ls -als /;
             - chmod 775 /srv;
             - cp ./*.rc /srv/*.*;
             - cp ./*.sh /srv/*.*;
