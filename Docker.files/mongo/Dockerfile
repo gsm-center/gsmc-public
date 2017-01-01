@@ -2,7 +2,11 @@ FROM debian:jessie
 
 MAINTAINER Baltrushaitis Tomas <tbaltrushaitis@gmail.com>
 
-# add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
+RUN ["getent", "passwd"];
+RUN ["getent", "group"];
+
+# add our user and group first to make sure their IDs get assigned consistently,
+# regardless of whatever dependencies get added
 RUN [   "groupadd", "-r", "mongodb", ">/dev/null", "2&>1"
       , " && "
       , "useradd", "-r", "-g", "mongodb", "mongodb"
