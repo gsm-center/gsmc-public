@@ -29,6 +29,7 @@ pipelines:
             - cd /;
             - pwd;
             - ls -als /;
+            - ls -als /srv;
             - chmod 775 /srv;
             - cp ./*.rc /srv/*.*;
             - cp ./*.sh /srv/*.*;
