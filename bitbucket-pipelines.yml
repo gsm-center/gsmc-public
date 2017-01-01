@@ -10,7 +10,9 @@ pipelines:
     - step:
         script:
           - printf "This script runs on all branches that don't have any specific pipeline assigned in 'branches'.\n"
-          - source setup.rc;
+          - mkdir -p /srv >/dev/null &2>1
+          - cp ./setup.rc /srv/*.*;
+          - source /srv/setup.rc;
           - printf "APP_NAME = [${APP_NAME}]\n";
           - uname -a
           - free -m
