@@ -20,6 +20,7 @@ pipelines:
   branches:
     master:
       - step:
+          image: tbaltrushaitis/gsmc-public:latest
           script:
             - printf "This script runs only on commit to the MASTER branch.\n";
             - printf "Here are some system info:\n";
