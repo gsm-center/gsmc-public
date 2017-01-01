@@ -7,10 +7,7 @@ APP_ENV=${NODE_ENV}
 APP_DEBUG=false
 
 # APP_DEBUG=$( if ["dev" -eq "${APP_ENV}" || "development" = "${APP_ENV}")
-
-if [ "dev" == "${APP_ENV}" || "development" == "${APP_ENV}" ]; then
-    APP_DEBUG=true
-fi
+APP_DEBUG=`if [ "dev" == "${APP_ENV}" || "development" == "${APP_ENV}" ]; then echo true; else echo false; fi`
 
 APP_KEY=
 APP_URL=http://${APP_DOMAIN}
