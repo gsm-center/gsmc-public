@@ -4,7 +4,7 @@
 
 # APP_ENV=production
 APP_ENV=${NODE_ENV}
-APP_DEBUG=$($("dev" eq "${APP_ENV}") || $("development" eq "${APP_ENV}"))
+APP_DEBUG=$("dev" eq "${APP_ENV}" || "development" eq "${APP_ENV}")
 
 APP_KEY=
 APP_URL=http://${APP_DOMAIN}
