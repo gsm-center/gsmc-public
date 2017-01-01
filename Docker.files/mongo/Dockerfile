@@ -49,8 +49,11 @@ RUN set -x                  \
 
 # /**/
 
-RUN mkdir -p /data/docker.storages/mongodb /data/docker.storages/configdb \
- && chown -R mongodb:mongodb /data/docker.storages/mongodb /data/docker.storages/configdb
+RUN [
+        "mkdir", "-p", "/storage/docker-assets/mongodb", "/storage/docker-assets/configdb"
+      , "&&"
+      , "chown", "-R", "mongodb:mongodb", "/storage/docker-assets/mongodb", "/storage/docker-assets/configdb"
+    ];
 
 VOLUME ["/data/docker.storages/mongodb", "/data/docker.storages/configdb"];
 

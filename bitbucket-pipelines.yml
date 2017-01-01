@@ -14,9 +14,6 @@ pipelines:
           - cp ./setup.rc /srv/*.*;
           - source /srv/setup.rc;
           - printf "APP_NAME = [${APP_NAME}]\n";
-          - uname -a
-          - free -m
-          - df -H
           - lscpu
           - ls /home
           - printf "Everything is awesome!\n"
@@ -24,16 +21,21 @@ pipelines:
     master:
       - step:
           script:
-            - printf "This script runs only on commit to the MASTER branch.";
+            - printf "This script runs only on commit to the MASTER branch.\n";
+            - printf "Here are some system info:\n";
+            - uname -a
+            - free -m
+            - df -H
+            - printf "Processing operations ... \n";
             - mkdir -p /srv &> /dev/null &2>1;
             - chmod 775 /srv;
             - cd /srv;
             - pwd;
             - ls -als /;
-            - cp ./*.rc /srv/*.*;
-            - cp ./*.sh /srv/*.*;
-            - chmod +x /srv/*.sh;
-            - . /srv/setup.sh;
+            # - cp ./*.rc /srv/*.*;
+            # - cp ./*.sh /srv/*.*;
+            # - chmod +x /srv/*.sh;
+            # - . /srv/setup.sh;
             - printf "APP_NAME = [${APP_NAME}]\n";
             - printf "MYSQL_TAG = [${DB_ENGINE_TAG}]\n";
             - printf "\n\n\n[INFO] Master branch onpush build finished!\n";

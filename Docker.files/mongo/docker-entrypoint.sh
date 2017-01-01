@@ -7,7 +7,7 @@ fi
 
 # allow the container to be started with `--user`
 if [ "$1" = 'mongod' -a "$(id -u)" = '0' ]; then
-    chown -R mongodb /data/docker.storages/configdb /data/docker.storages/mongodb
+    chown -R mongodb /storage/docker-assets/configdb /storage/docker-assets/mongodb
     exec gosu mongodb "$BASH_SOURCE" "$@"
 fi
 

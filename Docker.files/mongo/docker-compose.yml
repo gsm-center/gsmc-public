@@ -1,11 +1,11 @@
 version: '2.0'
 
 services:
-  composer:
+  mongo:
     # image: tbaltrushaitis/mysql:${MYSQL_TAG}
     build: .
     # restart: always
-    container_name: composer-container
+    container_name: docker-mongo-${DB_ENGINE_TAG}
     env_file:
       - .env
     environment:
