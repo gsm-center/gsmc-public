@@ -1,4 +1,4 @@
-# GSMC-Public #
+## GSMC-Public ##
 
 ![GSMC Logo](https://bitbucket.org/gsmcenter/public/avatar/128)
 
@@ -10,16 +10,39 @@
 
 ***GSMC-Public*** is a web engine based on [Laravel](http://laravel.com) Framework
 
+
+### Dependencies ###
+
 Component | Tag | Version
 ----------|---------|----
 laravel | framework | 5.2
 gsmc | public | 0.0.1
 
-### How do I get set up? ###
 
-* Summary of set up
+### Container actions ###
+
+##### PULL
+```
+source .env;
+docker pull tbaltrushaitis/gsmc-public
+```
+
+##### BUILD:
+```
+docker build -c 512 --cpuset-cpus=0-1 -m 1024 --no-cache --pull --rm -f Docker.files/mongo/Dockerfile -t tbaltrushaitis/gsmc-public:latest .
+```
+
+##### COMMIT:
+```
+docker commit 5db0dcd0d497
+```
+
+##### PUSH:
+```
+docker push tbaltrushaitis/gsmc-public:0.0.2
+```
+
 * Configuration
-* Dependencies
 * Data storage configuration
 * How to run tests
 * Deployment instructions
