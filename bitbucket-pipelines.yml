@@ -36,9 +36,9 @@ pipelines:
             - printf "/SRV:\n";
             - ls -als;
             - printf "/ETC/HOSTS:\n";
-            - ls -als /etc/hosts;
+            - ls -als /etc/hosts/;
             - printf "/HOME:\n";
-            - ls -als /home;
+            - ls -als /home/;
             # - cp ./*.rc /srv/*.*;
             # - cp ./*.sh /srv/*.*;
             # - chmod +x /srv/*.sh;
