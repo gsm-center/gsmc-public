@@ -1,0 +1,27 @@
+version: '2.0'
+
+services:
+  composer:
+    # image: tbaltrushaitis/mysql:${MYSQL_TAG}
+    build: .
+    # restart: always
+    container_name: composer-container
+    env_file:
+      - .env
+    environment:
+      APP_NAME: ${APP_NAME}
+      WWW_USER: ${WWW_USER}
+    extra_hosts:
+      - "google-dns:8.8.8.8"
+      - "gsm-center:91.218.212.21"
+  db:
+    image: tbaltrushaitis/db-mysql:${MYSQL_TAG}
+    # restart: always
+    container_name: db-mysql-001
+    env_file:
+      - .env
+    environment:
+      DB_USER: ${DB_USER}
+
+  #engine:
+  #  image: 192.168.10.69:5000/nginx-latest
